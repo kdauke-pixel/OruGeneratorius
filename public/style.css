@@ -1,13 +1,13 @@
 * { box-sizing: border-box; }
-body { margin: 0; background: #eef4fa; color: #1e3047; font-family: system-ui, sans-serif; }
+body { margin: 0; min-height: 100vh; background: linear-gradient(160deg, #e4d5ef 0%, #f6c7ba 45%, #ffdeb0 100%); color: #422d46; font-family: system-ui, sans-serif; }
 main { width: min(100% - 32px, 500px); margin: 40px auto; }
 .sun { position: relative; width: 220px; height: 132px; margin: 0 auto 12px; pointer-events: none; }
-.moon { position: absolute; width: 90px; height: 90px; left: 130px; top: 12px; filter: drop-shadow(0 4px 10px #7d89bd26); animation: sun-float 8s ease-in-out -2s infinite; }
+.moon { position: absolute; width: 90px; height: 90px; left: 130px; top: 12px; filter: drop-shadow(0 4px 10px #98689033); animation: sun-float 8s ease-in-out -2s infinite; }
 .sun-orbit { position: absolute; width: 120px; height: 120px; left: 30px; top: 0; animation: sun-float 6s ease-in-out infinite; }
-.sun-halo { position: absolute; inset: -16px; border-radius: 50%; background: radial-gradient(circle, #ffd56c66, #ffd56c00 70%); animation: sun-glow 4s ease-in-out infinite; }
-.sun-rays { position: absolute; inset: 0; width: 100%; height: 100%; color: #edaf32; animation: sun-spin 48s linear infinite; }
-.sun-core { position: absolute; inset: 28px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff3b2, #ffd15a 48%, #f5a623); box-shadow: 0 0 24px #ffc74755, inset 0 -4px 8px #ed9c2526; }
-.sun-cloud { position: absolute; height: 22px; border-radius: 30px; background: linear-gradient(#fff, #e4edf7); box-shadow: 0 5px 12px #7c99b31a; }
+.sun-halo { position: absolute; inset: -16px; border-radius: 50%; background: radial-gradient(circle, #ff916c80, #ff916c00 70%); animation: sun-glow 4s ease-in-out infinite; }
+.sun-rays { position: absolute; inset: 0; width: 100%; height: 100%; color: #ed824a; animation: sun-spin 48s linear infinite; }
+.sun-core { position: absolute; inset: 28px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #ffe5a3, #ffb366 48%, #ed7554); box-shadow: 0 0 24px #ff936c66, inset 0 -4px 8px #d55d4526; }
+.sun-cloud { position: absolute; height: 22px; border-radius: 30px; background: linear-gradient(#fff5ee, #edcbd6); box-shadow: 0 5px 12px #955e7a26; }
 .sun-cloud::before, .sun-cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
 .sun-cloud::before { width: 32px; height: 32px; left: 14px; bottom: 7px; }
 .sun-cloud::after { width: 24px; height: 24px; right: 12px; bottom: 5px; }
@@ -21,26 +21,26 @@ main { width: min(100% - 32px, 500px); margin: 40px auto; }
   .sun-orbit, .sun-halo, .sun-rays, .sun-cloud, .moon { animation: none; }
 }
 h1 { font-size: clamp(26px, 6vw, 34px); text-align: center; margin: 8px 0; }
-.intro { text-align: center; color: #52647a; margin-bottom: 26px; line-height: 1.5; }
-.card { background: white; padding: 28px; border-radius: 20px; box-shadow: 0 8px 30px #20354c0d; }
+.intro { text-align: center; color: #71536b; margin-bottom: 26px; line-height: 1.5; }
+.card { background: #fff8f3; padding: 28px; border-radius: 20px; box-shadow: 0 8px 30px #77426118; }
 label { display: block; font-weight: 600; margin-bottom: 8px; }
-label span { font-weight: 400; color: #637084; }
-input { width: 100%; padding: 12px; border: 1px solid #bcc9d8; border-radius: 8px; font: inherit; margin-bottom: 18px; }
-input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #e9a323; outline-offset: 3px; }
-.hint { color: #627087; font-size: 13px; line-height: 1.6; }
+label span { font-weight: 400; color: #76566c; }
+input { width: 100%; padding: 12px; border: 1px solid #d9b7c2; border-radius: 8px; font: inherit; margin-bottom: 18px; }
+input:focus-visible, button:focus-visible, a:focus-visible { outline: 3px solid #b95036; outline-offset: 3px; }
+.hint { color: #76566c; font-size: 13px; line-height: 1.6; }
 form .hint { margin: -8px 0 18px; }
-button { width: 100%; padding: 13px; border: 0; background: #0f827c; color: white; font: inherit; font-weight: 600; border-radius: 8px; cursor: pointer; }
-button:hover { background: #0b6863; }
+button { width: 100%; padding: 13px; border: 0; background: #a84232; color: white; font: inherit; font-weight: 600; border-radius: 8px; cursor: pointer; }
+button:hover { background: #8d3529; }
 button:disabled { opacity: .65; cursor: wait; }
-#status { font-size: 14px; line-height: 1.6; margin: 20px 0 0; color: #52647a; }
-#status.error { color: #ac2637; }
-#result { border-top: 1px solid #e0e7ef; margin-top: 24px; padding-top: 20px; }
+#status { font-size: 14px; line-height: 1.6; margin: 20px 0 0; color: #71536b; }
+#status.error { color: #a12841; }
+#result { border-top: 1px solid #ead4d8; margin-top: 24px; padding-top: 20px; }
 h2 { font-size: 22px; margin: 0 0 8px; }
 #temperature { font-size: 56px; font-weight: 700; letter-spacing: -2px; margin: 12px 0 0; }
-#description { margin: 0 0 24px; text-transform: capitalize; color: #52647a; }
+#description { margin: 0 0 24px; text-transform: capitalize; color: #71536b; }
 dl { margin: 0; }
-dl div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #edf1f6; font-size: 14px; }
+dl div { display: flex; justify-content: space-between; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f0dfe1; font-size: 14px; }
 dd { margin: 0; font-weight: 600; white-space: nowrap; }
-footer { text-align: center; font-size: 12px; color: #637084; line-height: 1.9; margin-top: 24px; }
-a { color: #2759b7; }
+footer { text-align: center; font-size: 12px; color: #76566c; line-height: 1.9; margin-top: 24px; }
+a { color: #8d3d58; }
 @media (max-width: 400px) { main { margin-top: 20px; } .card { padding: 20px; } }

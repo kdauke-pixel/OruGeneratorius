@@ -1,0 +1,26 @@
+# Priklausomybės
+node_modules/
+
+# Slapti aplinkos kintamieji (šabloną galima kelti)
+.env
+.env.*
+!.env.example
+
+# Žurnalai ir laikini failai
+*.log
+logs/
+*.tmp
+npm-debug.log*
+
+# Testų ir kūrimo rezultatai
+coverage/
+.nyc_output/
+dist/
+build/
+
+# Redaktoriai ir operacinė sistema
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+Desktop.ini

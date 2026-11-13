@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Orų generatorius</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <div class="sun" aria-hidden="true">☀</div>
+    <h1>Orų generatorius</h1>
+    <p class="intro">Sužinok, kokie orai tavo pasirinktame mieste.</p>
+    <section class="card" aria-label="Orų paieška">
+      <form id="weather-form">
+        <label for="country">Šalis</label>
+        <input id="country" name="country" placeholder="Pvz., Lietuva arba LT" value="Lietuva" maxlength="100" required>
+        <label for="city">Miestas <span>(neprivaloma)</span></label>
+        <input id="city" name="city" placeholder="Pvz., Vilnius" maxlength="150">
+        <p class="hint">Palikus miestą tuščią, rodysime šalies sostinės orus.</p>
+        <button type="submit">Rodyti orus</button>
+      </form>
+      <p id="status" role="status" aria-live="polite">Įvesk vietovę ir spausk „Rodyti orus“.</p>
+      <section id="result" aria-label="Orų rezultatas" hidden>
+        <h2 id="place"></h2>
+        <p id="capital" class="hint" hidden>Rodomi šalies sostinės orai.</p>
+        <p id="temperature"></p>
+        <p id="description"></p>
+        <dl>
+          <div><dt>Jutiminė temperatūra</dt><dd id="feels"></dd></div>
+          <div><dt>Drėgmė</dt><dd id="humidity"></dd></div>
+          <div><dt>Vėjas</dt><dd id="wind"></dd></div>
+        </dl>
+        <p id="time" class="hint"></p>
+      </section>
+    </section>
+    <footer>Orų modelių duomenys: <a href="https://open-meteo.com/">Open-Meteo</a> · Vietovės: <a href="https://www.geonames.org/">GeoNames</a><br>Nemokama nekomerciniam naudojimui. Registruotis nereikia.</footer>
+  </main>
+</body>
+</html>

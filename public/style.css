@@ -1,7 +1,8 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: #eef4fa; color: #1e3047; font-family: system-ui, sans-serif; }
 main { width: min(100% - 32px, 500px); margin: 40px auto; }
-.sun { position: relative; width: 180px; height: 132px; margin: 0 auto 12px; pointer-events: none; }
+.sun { position: relative; width: 220px; height: 132px; margin: 0 auto 12px; pointer-events: none; }
+.moon { position: absolute; width: 90px; height: 90px; left: 130px; top: 12px; filter: drop-shadow(0 4px 10px #7d89bd26); animation: sun-float 8s ease-in-out -2s infinite; }
 .sun-orbit { position: absolute; width: 120px; height: 120px; left: 30px; top: 0; animation: sun-float 6s ease-in-out infinite; }
 .sun-halo { position: absolute; inset: -16px; border-radius: 50%; background: radial-gradient(circle, #ffd56c66, #ffd56c00 70%); animation: sun-glow 4s ease-in-out infinite; }
 .sun-rays { position: absolute; inset: 0; width: 100%; height: 100%; color: #edaf32; animation: sun-spin 48s linear infinite; }
@@ -17,7 +18,7 @@ main { width: min(100% - 32px, 500px); margin: 40px auto; }
 @keyframes sun-glow { 0%, 100% { opacity: .65; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.08); } }
 @keyframes cloud-drift { 0%, 100% { translate: -6px 0; } 50% { translate: 6px -3px; } }
 @media (prefers-reduced-motion: reduce) {
-  .sun-orbit, .sun-halo, .sun-rays, .sun-cloud { animation: none; }
+  .sun-orbit, .sun-halo, .sun-rays, .sun-cloud, .moon { animation: none; }
 }
 h1 { font-size: clamp(26px, 6vw, 34px); text-align: center; margin: 8px 0; }
 .intro { text-align: center; color: #52647a; margin-bottom: 26px; line-height: 1.5; }

@@ -9,7 +9,22 @@
 </head>
 <body>
   <main>
-    <div class="sun" aria-hidden="true">☀</div>
+    <div class="sun" aria-hidden="true">
+      <div class="sun-orbit">
+        <span class="sun-halo"></span>
+        <svg class="sun-rays" viewBox="0 0 120 120" fill="none">
+          <g stroke="currentColor" stroke-width="5" stroke-linecap="round">
+            <path d="M60 9v12 M60 99v12 M9 60h12 M99 60h12" />
+            <path d="m24 24 9 9 m54 54 9 9 M24 96l9-9 m54-54 9-9" />
+            <path d="m40 12 4 11 m32 74 4 11 M12 80l11-4 m74-32 11-4" />
+            <path d="m12 40 11 4 m74 32 11 4 M40 108l4-11 m32-74 4-11" />
+          </g>
+        </svg>
+        <span class="sun-core"></span>
+      </div>
+      <span class="sun-cloud sun-cloud-back"></span>
+      <span class="sun-cloud sun-cloud-front"></span>
+    </div>
     <h1>Orų generatorius</h1>
     <p class="intro">Sužinok, kokie orai tavo pasirinktame mieste.</p>
     <section class="card" aria-label="Orų paieška">

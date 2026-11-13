@@ -1,7 +1,24 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: #eef4fa; color: #1e3047; font-family: system-ui, sans-serif; }
 main { width: min(100% - 32px, 500px); margin: 40px auto; }
-.sun { color: #e9a323; font-size: 52px; text-align: center; }
+.sun { position: relative; width: 180px; height: 132px; margin: 0 auto 12px; pointer-events: none; }
+.sun-orbit { position: absolute; width: 120px; height: 120px; left: 30px; top: 0; animation: sun-float 6s ease-in-out infinite; }
+.sun-halo { position: absolute; inset: -16px; border-radius: 50%; background: radial-gradient(circle, #ffd56c66, #ffd56c00 70%); animation: sun-glow 4s ease-in-out infinite; }
+.sun-rays { position: absolute; inset: 0; width: 100%; height: 100%; color: #edaf32; animation: sun-spin 48s linear infinite; }
+.sun-core { position: absolute; inset: 28px; border-radius: 50%; background: radial-gradient(circle at 32% 28%, #fff3b2, #ffd15a 48%, #f5a623); box-shadow: 0 0 24px #ffc74755, inset 0 -4px 8px #ed9c2526; }
+.sun-cloud { position: absolute; height: 22px; border-radius: 30px; background: linear-gradient(#fff, #e4edf7); box-shadow: 0 5px 12px #7c99b31a; }
+.sun-cloud::before, .sun-cloud::after { content: ''; position: absolute; border-radius: 50%; background: inherit; }
+.sun-cloud::before { width: 32px; height: 32px; left: 14px; bottom: 7px; }
+.sun-cloud::after { width: 24px; height: 24px; right: 12px; bottom: 5px; }
+.sun-cloud-front { width: 83px; left: 86px; top: 95px; animation: cloud-drift 7s ease-in-out infinite; }
+.sun-cloud-back { width: 65px; left: 6px; top: 76px; opacity: .75; transform: scale(.8); animation: cloud-drift 9s ease-in-out -3s infinite reverse; }
+@keyframes sun-spin { to { transform: rotate(360deg); } }
+@keyframes sun-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+@keyframes sun-glow { 0%, 100% { opacity: .65; transform: scale(.94); } 50% { opacity: 1; transform: scale(1.08); } }
+@keyframes cloud-drift { 0%, 100% { translate: -6px 0; } 50% { translate: 6px -3px; } }
+@media (prefers-reduced-motion: reduce) {
+  .sun-orbit, .sun-halo, .sun-rays, .sun-cloud { animation: none; }
+}
 h1 { font-size: clamp(26px, 6vw, 34px); text-align: center; margin: 8px 0; }
 .intro { text-align: center; color: #52647a; margin-bottom: 26px; line-height: 1.5; }
 .card { background: white; padding: 28px; border-radius: 20px; box-shadow: 0 8px 30px #20354c0d; }
